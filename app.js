@@ -61,4 +61,3 @@ const decode = () => {
   document.getElementById('encryptedMessage').innerHTML = messageEncode;
 }
 decode()
-
