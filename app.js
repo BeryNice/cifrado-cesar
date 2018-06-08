@@ -18,7 +18,7 @@ const encode = () => {
 encode()
 */
 
-
+// Funcion codificar
 const encode = () => {
   //declaramos la variable donde se almacena el mensaje de entrada
   let string = document.getElementById('stringMessage').value;
@@ -39,3 +39,26 @@ const encode = () => {
   document.getElementById('encryptedMessage').innerHTML = messageEncode;
 }
 encode()
+
+//funcion decodificar
+const decode = () => {
+  //declaramos la variable donde se almacena el mensaje de entrada
+  let string = document.getElementById('stringMessage').value;
+  //declaramos la variable donde se almacena la posición a desplazar
+  let offset = parseInt (document.getElementById('keychainOffset').value);
+  //offsetMove = offset;
+
+  // declaramos una nueva variable en donde se almacena el mensaje codificado
+  let messageEncode = "";
+  //codificar mensaje
+  for (var i = 0; i < string.length; i++) {
+    var message = string[i].charCodeAt();
+    console.log(string[i].charCodeAt());
+    //(x+n)%+26
+    messageEncode += String.fromCharCode(message - offset);
+  }
+  // Imprimimos mensaje en HTML
+  document.getElementById('encryptedMessage').innerHTML = messageEncode;
+}
+decode()
+
